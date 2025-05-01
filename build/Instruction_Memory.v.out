@@ -1,0 +1,42 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_00000287af1524d0 .scope module, "Instruction_Memory" "Instruction_Memory" 2 15;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "rst";
+    .port_info 1 /INPUT 32 "A";
+    .port_info 2 /OUTPUT 32 "RD";
+o00000287af1870f8 .functor BUFZ 1, C4<z>; HiZ drive
+L_00000287af152fa0 .functor NOT 1, o00000287af1870f8, C4<0>, C4<0>, C4<0>;
+o00000287af186fd8 .functor BUFZ 32, C4<zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz>; HiZ drive
+v00000287af152660_0 .net "A", 31 0, o00000287af186fd8;  0 drivers
+v00000287af152700_0 .net "RD", 31 0, L_00000287af2be050;  1 drivers
+v00000287af1527a0_0 .net *"_ivl_0", 0 0, L_00000287af152fa0;  1 drivers
+L_00000287af1cfc48 .functor BUFT 1, C4<00000000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v00000287af152840_0 .net/2u *"_ivl_2", 31 0, L_00000287af1cfc48;  1 drivers
+v00000287af1528e0_0 .net *"_ivl_4", 31 0, L_00000287af2bdf10;  1 drivers
+v00000287af2bdd30_0 .net *"_ivl_7", 29 0, L_00000287af2bdfb0;  1 drivers
+v00000287af2bddd0 .array "mem", 0 1023, 31 0;
+v00000287af2bde70_0 .net "rst", 0 0, o00000287af1870f8;  0 drivers
+L_00000287af2bdf10 .array/port v00000287af2bddd0, L_00000287af2bdfb0;
+L_00000287af2bdfb0 .part o00000287af186fd8, 2, 30;
+L_00000287af2be050 .functor MUXZ 32, L_00000287af2bdf10, L_00000287af1cfc48, L_00000287af152fa0, C4<>;
+    .scope S_00000287af1524d0;
+T_0 ;
+    %pushi/vec4 6480435, 0, 32;
+    %ix/load 4, 0, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v00000287af2bddd0, 4, 0;
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "Instruction_Memory.v";
